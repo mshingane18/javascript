@@ -1,0 +1,117 @@
+let str = "Naman";
+
+function toLowercase(str){
+    return str.toLowerCase();
+}
+function resStr(str) {
+return  str.split("").reverse().join("");
+}
+function checkPalindrome(str, reverse){
+    return str.toLowerCase() === reverse.toLowerCase();
+}
+const lowerStr = toLowercase(str);
+console.log(lowerStr);
+const result = resStr(str);
+console.log(result);
+// find the word is palindrome or not
+const isPalindrome = checkPalindrome(str, result);
+if(isPalindrome){
+    console.log("string is a palindrome");
+}else{
+      console.log("string is not a palindrome");
+}
+
+let arr = [99, 5, 3, 100, 1];
+// find largest nubmber from arr
+function largestNumber(arr){
+     let numberLg = arr[0];
+    for(i=0; i<arr.length; i++){
+        if(arr[i]> numberLg){
+            numberLg= arr[i];
+        }
+    }
+    return numberLg;
+}
+//find largest nubmber from arr with map
+const largest = (arr)=>{
+    let largestNumber = arr[0]; 
+ arr.map(num =>{
+if(largestNumber < num){
+ largestNumber= num;
+}
+})
+return largestNumber;
+}
+console.log(largest(arr));
+// remove first eliment from arr
+let arr1 = arr.slice(1);
+console.log(arr1);
+
+const obj = {userName: "Mahesh"};
+obj.age = 30;
+console.log(obj);
+delete obj.age;
+console.log(obj);
+
+//find the sum of an array
+function findSum(arr){
+    let sum = 0;
+    for(i=0; i<arr.length; i++){
+        sum+=arr[i];
+    }
+    return sum;
+}
+console.log(findSum(arr));
+
+arr1 = [5,6];
+arr2 = [7,8];
+resultArr = [...arr1, ...arr2];
+console.log(resultArr);
+
+// [5,1,4,3,2] make it ascending first and then reverse it
+let arrList = [5,1,4,3,2];
+function ascending(arr){
+let temp = 0;
+for(i=0; i<arr.length; i++){
+    for(j= i+1; j<arr.length; j++){
+        if(arr[i]>arr[j]){
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+}
+return arr;
+}
+let ascList = ascending(arrList)
+console.log(ascList);
+//reverse the array
+function reverseArray(arr){
+let reverse =[];
+for(i = arr.length-1; i>=0; i--){
+    reverse.push(arr[i]);
+}
+return reverse;
+}
+console.log(reverseArray(ascList));
+// Make a string to lower case first and then find the duplicates from that.
+function findDuplicates(arr){
+    let find = [];
+    for(i=0; i <arr.length; i++){
+        for(j=i+1; j<arr.length; j++){
+            if(arr[i]=== arr[j] && !find.includes(arr[i])){
+                find.push(arr[i]);
+            }
+        }
+    
+    }
+    return find;
+}
+let me = "mAhEshMahEsH";
+const toLower = me.toLowerCase();
+let arrofstr = toLower.split("");
+console.log(arrofstr);
+let duplicates = findDuplicates(arrofstr);
+console.log(duplicates);
+
+
