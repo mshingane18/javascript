@@ -12,3 +12,9 @@ function once(fn) {
 once(() => {
   console.log("Hello");
 })();
+
+let x = "123";
+console.log(x, typeof x);
+//x=Number(x);
+x=parseInt(x);
+console.log(x, typeof x);
